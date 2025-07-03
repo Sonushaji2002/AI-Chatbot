@@ -1,0 +1,9 @@
+python-dotenv
+requests
+duckduckgo-search
+markdownify
+langchain-community
+langchain-core
+langchain-groq
+langgraph
+streamlit
