@@ -3,27 +3,39 @@ import re
 import requests
 from markdownify import markdownify
 
-
 @tool
-def visit_web(url:str) -> str:
-    """Use this tool to visit URLs obtained from the search results and extract the main content of the webpages in markdown format.
-    Arg:
-        url:The url link of the webpage to visit
+def visit_web(url: str) -> str:
     """
-    #send request
-    response = requests.get(url,timeout=20)
-    #check if request was successful
+    Visit the given URL and extract the main content of the webpage in markdown format.
+    Args:
+        url (str): The URL of the webpage to visit.
+    Returns:
+        str: The main content of the webpage converted to markdown.
+    """
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; LangChainBot/1.0)"
+    }
+    response = requests.get(url,headers=headers,timeout=20)
     response.raise_for_status()
-    #convert the HTML to markdown
     markdown_content = markdownify(response.text).strip()
-    markdown_content = re.sub(r"\n{3,}","\n\n",markdown_content)
+    markdown_content = re.sub(r"\n{3,}","\n\n", markdown_content)
     return markdown_content
 
+
 @tool
-def math(query:str) -> str:
-    """Evaluate a basic math expression, e.g. 2+2 or 10*5."""
+def math(query: str) -> str:
+    """
+    Evaluate a basic math expression, e.g. 2+2 or 10*5.
+
+    Args:
+        query (str): A math expression as a string.
+
+    Returns:
+        str: The result of the expression or an error message.
+    """
     try:
-        result = eval(query)
+        result = eval(query,{"__builtins__": None},{})
         return str(result)
     except Exception as e:
         return f"Math error:{str(e)}"
+
