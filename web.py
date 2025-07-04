@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-from Agent import call_agent
+from NN import call_agent
 
 st.set_page_config(page_title="NeuroNet",layout="wide")
 #TYPEWRITER EFFECT
