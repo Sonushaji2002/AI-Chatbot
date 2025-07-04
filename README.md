@@ -1,4 +1,5 @@
- NeuroNet Ai Agent
+NeuroNet Ai Agent
+
 An intelligent chat-based agent powered by LLaMA3 and LangChain that can search the web, evaluate math,and assist with diverse queries.NeuroNet integrates web tools and natural language reasoning into a minimalist Streamlit interface — making it both powerful and easy to use.
 
 ## Problem Statement
