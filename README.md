@@ -51,6 +51,7 @@ Clear chat history with one click
 ##Folder Structure
  
 neuronet-agent/
+
 ├── web.py               # Streamlit frontend to run the app 
 
 ├── NN.py                # Main LangChain agent logic 
