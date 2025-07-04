@@ -52,10 +52,14 @@ Clear chat history with one click
  
 neuronet-agent/
 ├── web.py               # Streamlit frontend to run the app 
+
 ├── NN.py                # Main LangChain agent logic 
+
 ├── prop/
 │   └── visit_web.py     # Custom tools or chains for web interaction and math logic
+
 ├── requirement.txt      # Python dependencies for the project
+
 ├── .env                 # API keys and environment variables (user-created,not version-controlled)
 
 
