@@ -39,7 +39,7 @@ plus_clicked = st.button("🗘",key="clear_chat",help="New Chat",type="primary")
 if plus_clicked:
     st.session_state.messages.clear()
 #TITLE
-st.markdown("<h1 style='text-align:center;color:#4CAF50;'>NeuroNet</h1>",unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;color:white;'>Agent</h1>", unsafe_allow_html=True)
 #DISPLAY OLD CHAT HISTORY
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
