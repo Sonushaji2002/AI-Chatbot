@@ -39,7 +39,7 @@ plus_clicked = st.button("🗘",key="clear_chat",help="New Chat",type="primary")
 if plus_clicked:
     st.session_state.messages.clear()
 #TITLE
-st.markdown("<h1 style='text-align:center;color:white;'>Agent</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align:center;color:white;'>NueroNet Ai Agent</h1>", unsafe_allow_html=True)
 #DISPLAY OLD CHAT HISTORY
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
@@ -51,7 +51,7 @@ st.markdown('</div>',unsafe_allow_html=True)
 #HANDLE PROMPT
 if prompt and prompt.strip():
     st.session_state.messages.append({"role":"user","content":prompt})
-    with st.chat_message("user"):
+    with st.chat_message("user",avatar=None):
         st.markdown(prompt)
 
     with st.spinner("Thinking..."):
@@ -61,7 +61,7 @@ if prompt and prompt.strip():
             response = "Sorry,something went wrong while generating a response."
 
     st.session_state.messages.append({"role":"assistant","content":response})
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant",avatar=None):
         typewriter_display(response)
 
 
