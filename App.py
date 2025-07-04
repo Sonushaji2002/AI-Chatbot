@@ -51,7 +51,7 @@ st.markdown('</div>',unsafe_allow_html=True)
 #HANDLE PROMPT
 if prompt and prompt.strip():
     st.session_state.messages.append({"role":"user","content":prompt})
-    with st.chat_message("user",avatar=None):
+    with st.chat_message("user"):
         st.markdown(prompt)
 
     with st.spinner("Thinking..."):
@@ -61,7 +61,7 @@ if prompt and prompt.strip():
             response = "Sorry,something went wrong while generating a response."
 
     st.session_state.messages.append({"role":"assistant","content":response})
-    with st.chat_message("assistant",avatar=None):
+    with st.chat_message("assistant"):
         typewriter_display(response)
 
 
