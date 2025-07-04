@@ -51,9 +51,9 @@ Clear chat history with one click
 ##Folder Structure
  
 neuronet-agent/
-├── App.py               # Main Streamlit app
-├── Agent.py             # LangChain agent logic
-├── tools/
+├── web.py               # Main Streamlit app
+├── NN.py             # LangChain agent logic
+├── prop/
 │   └── visit_web.py     # Custom tools for web + math
 ├── requirement.txt      # Project dependencies
 ├── .env                 # API key config (user-generated)
